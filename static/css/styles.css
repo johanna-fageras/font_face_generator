@@ -1,0 +1,78 @@
+@import "fonts.css";
+
+body {
+  font-weight: 300;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #183153;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 600 !important;
+}
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  max-width: 700px !important;
+  text-align: center;
+  margin: 0.5rem auto 1.5rem auto;
+  font-weight: 300 !important;
+}
+
+h5 {
+  font-size: 1.4rem;
+  font-weight: 500 !important;
+}
+
+.btn {
+  font-weight: 400 !important;
+  font-size: 1.1rem !important;
+  line-height: 1;
+  padding: 0.75rem 0.9rem 0.5rem 0.9rem;
+}
+
+label {
+  font-weight: 500 !important;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem !important;
+}
+
+input {
+  font-weight: 300 !important;
+  font-size: 1.1rem;
+}
+
+.formats {
+  margin-top: 0.35rem;
+  font-size: 0.95rem !important;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  display: none;
+}
+.custom-file-input::file-selector-button {
+  display: none;
+}
+#cssOutput {
+  font-family: "Comic Mono" !important;
+  font-size: 0.95rem;
+  tab-size: 4;
+  overflow-x: auto;
+}
+
+/* Footer */
+.footer {
+  background-color: #183153;
+  color: #fff;
+  text-align: center;
+}
+.footer p {
+  margin: 0;
+  font-size: 1rem;
+}

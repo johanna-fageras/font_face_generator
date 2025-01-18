@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Font Face CSS Generator</title>
+    <link
+      href="{{ url_for('static', filename='css/bootstrap.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      href="{{ url_for('static', filename='css/styles.css') }}"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container text-center py-5">
+        <h1 class="hero-title">JF Font CSS Generator</h1>
+        <p class="hero-subtitle lead">
+          Easily create CSS Stylesheets with @font-face rules for your webfonts.
+          Just upload, generate and download.
+        </p>
+        <a href="#generateForm" class="btn btn-primary">Get Started</a>
+      </div>
+    </section>
+
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-md-6">
+          <form id="generateForm" class="mb-4">
+            <div class="mb-3">
+              <label for="fontFamily" class="form-label">Font Family</label>
+              <input
+                type="text"
+                class="form-control"
+                id="fontFamily"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="baseUrl" class="form-label">Base URL</label>
+              <input type="text" class="form-control" id="baseUrl" required />
+              <div class="form-text">Example: ../fonts</div>
+            </div>
+
+            <div class="mb-3">
+              <label for="fontFiles" class="form-label">Font Files</label>
+              <div class="input-group">
+                <input
+                  type="file"
+                  class="form-control custom-file-input"
+                  id="fontFiles"
+                  accept=".ttf,.woff,.woff2,.eot"
+                  multiple
+                  required
+                />
+              </div>
+              <div class="form-text formats">
+                Available Formats: TTF WOFF WOFF2 & EOT
+              </div>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input
+                type="checkbox"
+                class="form-check-input"
+                id="useCustomWeights"
+              />
+              <label class="form-check-label" for="useCustomWeights">
+                Use Custom Weights
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-dark">Generate CSS</button>
+          </form>
+
+          <div class="mb-3">
+            <h5>Add Custom Weights:</h5>
+            <div id="customWeightEditor" class="bg-light p-3 rounded mb-3">
+              <div class="row mb-2">
+                <div class="col">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="weightName"
+                    placeholder="Name (e.g., Book)"
+                  />
+                </div>
+                <div class="col">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="weightValue"
+                    placeholder="Value (e.g., 350)"
+                  />
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-dark" id="addWeight">
+                    Add Weight
+                  </button>
+                </div>
+              </div>
+              <div id="customWeightsList"></div>
+            </div>
+
+            <h5>Default Weight Mappings:</h5>
+            <pre id="weightMappings" class="bg-light p-3 rounded"></pre>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="mb-3">
+            <h5>Generated CSS:</h5>
+            <div
+              id="cssOutput"
+              class="bg-light p-3 rounded"
+              style="min-height: 300px"
+            >
+              Your CSS will appear here...
+            </div>
+          </div>
+          <button id="downloadBtn" class="btn btn-primary">
+            Download Stylesheet
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-3">
+      <div class="container text-center">
+        <p>Copyright © 2025 JF Font CSS Generator. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  </body>
+</html>

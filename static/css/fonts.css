@@ -1,0 +1,117 @@
+@font-face {
+  font-family: "CC Hero Sandwich Pro";
+  src: url("../fonts/CCHeroSandwichPro-VF.woff2") format("woff2"),
+    url("../fonts/CCHeroSandwichPro-VF.woff") format("woff"),
+    url("../fonts/CCHeroSandwichPro-VF.ttf") format("truetype");
+  font-weight: 100 900;
+}
+
+.cc-hero-sandwich-pro-thin {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 100, "ital" 0;
+}
+
+.cc-hero-sandwich-pro-extralight {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 200, "ital" 0;
+}
+
+.cc-hero-sandwich-pro-light {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 300, "ital" 0;
+}
+
+.cc-hero-sandwich-pro-regular {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 400, "ital" 0;
+}
+
+.cc-hero-sandwich-pro-medium {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 500, "ital" 0;
+}
+
+.cc-hero-sandwich-pro-semibold {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 600, "ital" 0;
+}
+
+.cc-hero-sandwich-pro-bold {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 700, "ital" 0;
+}
+
+.cc-hero-sandwich-pro-extrabold {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 800, "ital" 0;
+}
+
+.cc-hero-sandwich-pro-black {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 900, "ital" 0;
+}
+
+.cc-hero-sandwich-pro-thinitalic {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 100, "ital" 15;
+}
+
+.cc-hero-sandwich-pro-extralightitalic {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 200, "ital" 15;
+}
+
+.cc-hero-sandwich-pro-lightitalic {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 300, "ital" 15;
+}
+
+.cc-hero-sandwich-pro-regularitalic {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 400, "ital" 15;
+}
+
+.cc-hero-sandwich-pro-mediumitalic {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 500, "ital" 15;
+}
+
+.cc-hero-sandwich-pro-semibolditalic {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 600, "ital" 15;
+}
+
+.cc-hero-sandwich-pro-bolditalic {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 700, "ital" 15;
+}
+
+.cc-hero-sandwich-pro-extrabolditalic {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 800, "ital" 15;
+}
+
+.cc-hero-sandwich-pro-blackitalic {
+  font-family: "CC Hero Sandwich Pro";
+  font-variation-settings: "wght" 900, "ital" 15;
+}
+
+@font-face {
+  font-family: "Comic Mono";
+  src: url("../fonts/ComicMono-Regular.woff2") format("woff2"),
+    url("../fonts/ComicMono-Regular.woff") format("woff"),
+    url("../fonts/ComicMono-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Comic Mono";
+  src: url("../fonts/ComicMono-Bold.woff2") format("woff2"),
+    url("../fonts/ComicMono-Bold.woff") format("woff"),
+    url("../fonts/ComicMono-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
