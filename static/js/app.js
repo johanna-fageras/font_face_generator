@@ -57,10 +57,16 @@ document.getElementById("addWeight").addEventListener("click", async (e) => {
   const weightsResponse = await fetch("/api/weights");
   const weights = await weightsResponse.json();
   const weightMappings = document.getElementById("weightMappings");
-  const formattedText = weights
-    .map(([name, value]) => `${name}: ${value}`)
-    .join(", ");
-  weightMappings.textContent = formattedText;
+  weightMappings.innerHTML = weights
+    .map(
+      ([name, value]) => `
+      <div class="weight-mapping-item">
+        <span class="weight-name">${name}</span>
+        <span class="weight-value">${value}</span>
+      </div>
+    `
+    )
+    .join("");
 });
 
 function updateCustomWeightsList() {
@@ -74,7 +80,7 @@ function updateCustomWeightsList() {
       <div class="col">${name}</div>
       <div class="col">${value}</div>
       <div class="col-auto">
-        <button class="btn btn-sm btn-danger" onclick="removeWeight('${name}')">Remove</button>
+        <button class="btn btn-sm btn-danger" onclick="removeWeight('${name}')">Remove <i class="fa-solid fa-minus"></i></button>
       </div>
     `;
     list.appendChild(row);
@@ -90,10 +96,16 @@ async function removeWeight(name) {
   const weightsResponse = await fetch("/api/weights");
   const weights = await weightsResponse.json();
   const weightMappings = document.getElementById("weightMappings");
-  const formattedText = weights
-    .map(([name, value]) => `${name}: ${value}`)
-    .join(", ");
-  weightMappings.textContent = formattedText;
+  weightMappings.innerHTML = weights
+    .map(
+      ([name, value]) => `
+      <div class="weight-mapping-item">
+        <span class="weight-name">${name}</span>
+        <span class="weight-value">${value}</span>
+      </div>
+    `
+    )
+    .join("");
 }
 
 async function saveCustomWeights() {
