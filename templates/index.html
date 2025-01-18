@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Font Face CSS Generator</title>
     <link
+      rel="stylesheet"
+      href="https://iconscdn.lon1.cdn.digitaloceanspaces.com/iconfonts/css/fontawesome.css"
+    />
+    <link
       href="{{ url_for('static', filename='css/bootstrap.css') }}"
       rel="stylesheet"
     />
@@ -22,13 +26,18 @@
           Easily create CSS Stylesheets with @font-face rules for your webfonts.
           Just upload, generate and download.
         </p>
-        <a href="#generateForm" class="btn btn-primary">Get Started</a>
+        <a href="#generateForm" class="btn btn-primary mx-1"
+          >Generate Stylesheet</a
+        >
+        <a href="#" class="btn btn-outline-light">Webfont Generator</a>
       </div>
     </section>
 
     <div class="container py-5">
       <div class="row">
+        <!-- Left Column - Input and Configuration -->
         <div class="col-md-6">
+          <!-- 1. Main Font Configuration Form -->
           <form id="generateForm" class="mb-4">
             <div class="mb-3">
               <label for="fontFamily" class="form-label">Font Family</label>
@@ -41,7 +50,7 @@
             </div>
 
             <div class="mb-3">
-              <label for="baseUrl" class="form-label">Base URL</label>
+              <label for="baseUrl" class="form-label">Font Path</label>
               <input type="text" class="form-control" id="baseUrl" required />
               <div class="form-text">Example: ../fonts</div>
             </div>
@@ -63,54 +72,66 @@
               </div>
             </div>
 
-            <div class="mb-3 form-check">
+            <div class="mb-3 form-check custom-weights-wrapper">
               <input
                 type="checkbox"
                 class="form-check-input"
                 id="useCustomWeights"
               />
-              <label class="form-check-label" for="useCustomWeights">
-                Use Custom Weights
-              </label>
+              <label class="form-check-label" for="useCustomWeights"
+                >Use Custom Weights</label
+              >
             </div>
-
-            <button type="submit" class="btn btn-dark">Generate CSS</button>
           </form>
 
-          <div class="mb-3">
-            <h5>Add Custom Weights:</h5>
-            <div id="customWeightEditor" class="bg-light p-3 rounded mb-3">
-              <div class="row mb-2">
-                <div class="col">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="weightName"
-                    placeholder="Name (e.g., Book)"
-                  />
-                </div>
-                <div class="col">
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="weightValue"
-                    placeholder="Value (e.g., 350)"
-                  />
-                </div>
-                <div class="col-auto">
-                  <button class="btn btn-dark" id="addWeight">
-                    Add Weight
-                  </button>
-                </div>
-              </div>
-              <div id="customWeightsList"></div>
+          <!-- 2. Weight Configuration Section -->
+          <div class="weights-configuration mb-4">
+            <!-- 2.1 Default Weight Mappings -->
+            <div class="weight-mappings-section mb-4">
+              <h5>Default Weight Mappings</h5>
+              <div class="weight-mappings-grid" id="weightMappings"></div>
             </div>
 
-            <h5>Default Weight Mappings:</h5>
-            <pre id="weightMappings" class="bg-light p-3 rounded"></pre>
+            <!-- 2.2 Custom Weight Editor -->
+            <div class="custom-weights-section">
+              <h5>Add Custom Weights</h5>
+              <div id="customWeightEditor" class="bg-light p-3 rounded mb-3">
+                <div class="row mb-2">
+                  <div class="col">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="weightName"
+                      placeholder="Name (e.g., Book)"
+                    />
+                  </div>
+                  <div class="col">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="weightValue"
+                      placeholder="Value (e.g., 350)"
+                    />
+                  </div>
+                  <div class="col-auto">
+                    <button class="btn btn-dark" id="addWeight">
+                      Add Weight <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+                <div id="customWeightsList"></div>
+              </div>
+            </div>
           </div>
+
+          <!-- 3. Generate Button -->
+          <button type="submit" class="btn btn-primary" form="generateForm">
+            Generate CSS <i class="fa-solid fa-fire"></i>
+          </button>
         </div>
 
+        <!-- Right Column - Output -->
+        <!-- Right Column - Output -->
         <div class="col-md-6">
           <div class="mb-3">
             <h5>Generated CSS:</h5>
@@ -124,7 +145,67 @@
           </div>
           <button id="downloadBtn" class="btn btn-primary">
             Download Stylesheet
+            <i class="fa-solid fa-arrow-down-to-bracket"></i>
           </button>
+
+          <!-- Add the profile card here -->
+          <div class="profile-card">
+            <div class="profile-header">
+              <img
+                src="{{ url_for('static', filename='images/profile.png') }}"
+                alt="Creator Profile"
+                class="profile-image"
+              />
+              <div class="profile-name">
+                <h4>Johanna Fagerås</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Gothenburg, Sweden</p>
+              </div>
+            </div>
+            <div class="profile-info">
+              <div class="info-item">
+                <i class="fas fa-globe"></i>
+                <a href="https://johfag.se/" target="_blank"
+                  >https://johfag.se</a
+                >
+              </div>
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:johannaelisabethfageras@pm.me"
+                  >johanna@johfag.se</a
+                >
+              </div>
+              <div class="profile-social">
+                <a
+                  href="https://github.com/johanna-fageras"
+                  target="_blank"
+                  class="social-icon"
+                >
+                  <i class="fa-brands fa-github"></i>
+                </a>
+                <a
+                  href="https://x.com/Johanna66786519"
+                  target="_blank"
+                  class="social-icon"
+                >
+                  <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/johfa9578"
+                  target="_blank"
+                  class="social-icon"
+                >
+                  <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a
+                  href="https://codepen.io/johfa9578"
+                  target="_blank"
+                  class="social-icon"
+                >
+                  <i class="fa-brands fa-codepen"></i>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

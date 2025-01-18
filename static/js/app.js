@@ -5,10 +5,16 @@ fetch("/api/weights")
   .then((response) => response.json())
   .then((weights) => {
     const weightMappings = document.getElementById("weightMappings");
-    const formattedText = weights
-      .map(([name, value]) => `${name} (${value})`)
-      .join("\n");
-    weightMappings.textContent = formattedText;
+    weightMappings.innerHTML = weights
+      .map(
+        ([name, value]) => `
+                <div class="weight-mapping-item">
+                    <span class="weight-name">${name}</span>
+                    <span class="weight-value">${value}</span>
+                </div>
+            `
+      )
+      .join("");
   });
 
 // Load custom weights if they exist
